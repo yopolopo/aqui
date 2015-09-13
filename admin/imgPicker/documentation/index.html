@@ -1,0 +1,385 @@
+<!doctype html>  
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	
+	<title>ImagePicker - Uploader -  Webcam - Cropper</title>
+	
+	<meta name="description" content="ImagePicker or imgPicker is a quick and easy way to upload images for profile avatar, profile header/cover (like Youtube/Google+), thumbnails or just when you need a simple image uploader. You can  take a picture with your webcam and you also have the option to crop your image.
+Features:
+- Upload images
+- Take pictures with your Webcam
+- Cropping and resizing
+- Works in all the major browsers, including IE7+ and mobile
+- Touchescreen compatible
+- Works with modal & inline
+- Save images to database
+- Options like aspect ratio, min/max width/height and more
+- Easy to configure & customize
+">
+	<meta name="author" content="HazzardWeb">
+	<meta name="copyright" content="HazzardWeb">
+	<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+	<meta name="date" content="2014-01-29T00:00:00+01:00">
+	
+	<link rel="stylesheet" href="assets/css/documenter_style.css" media="all">
+	<link rel="stylesheet" href="assets/js/google-code-prettify/prettify.css" media="screen">
+	<script src="assets/js/google-code-prettify/prettify.js"></script>
+
+	
+	
+	<script src="assets/js/jquery.js"></script>
+	
+	<script src="assets/js/jquery.scrollTo.js"></script>
+	<script src="assets/js/jquery.easing.js"></script>
+	
+	<script>document.createElement('section');var duration='500',easing='swing';</script>
+	<script src="assets/js/script.js"></script>
+	
+	<style>
+		html{background-color:#FFFFFF;color:#383838;}
+		::-moz-selection{background:#444444;color:#DDDDDD;}
+		::selection{background:#444444;color:#DDDDDD;}
+		#documenter_sidebar #documenter_logo{background-image:url(assets/images/image_1.png);}
+		a{color:#0000FF;}
+		.btn {
+			border-radius:3px;
+		}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: -ms-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: -webkit-gradient(linear, 0 0, 0 0088CC%, from(#DDDDDD), to(#0044CC));
+			  background-image: -webkit-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: -o-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: linear-gradient(top, #0088CC, #0044CC);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0088CC', endColorstr='#0044CC', GradientType=0);
+			  border-color: #0044CC #0044CC #bfbfbf;
+			  color:#FFFFFF;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  border-color: #0088CC #0088CC #bfbfbf;
+		  background-color: #0044CC;
+		}
+		hr{border-top:1px solid #EBEBEB;border-bottom:1px solid #FFFFFF;}
+		#documenter_sidebar, #documenter_sidebar ul a{background-color:#DDDDDD;color:#222222;}
+		#documenter_sidebar ul a{-webkit-text-shadow:1px 1px 0px #EEEEEE;-moz-text-shadow:1px 1px 0px #EEEEEE;text-shadow:1px 1px 0px #EEEEEE;}
+		#documenter_sidebar ul{border-top:1px solid #AAAAAA;}
+		#documenter_sidebar ul a{border-top:1px solid #EEEEEE;border-bottom:1px solid #AAAAAA;color:#444444;}
+		#documenter_sidebar ul a:hover{background:#444444;color:#DDDDDD;border-top:1px solid #444444;}
+		#documenter_sidebar ul a.current{background:#444444;color:#DDDDDD;border-top:1px solid #444444;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+	
+</head>
+<body class="documenter-project-imagepicker">
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ul id="documenter_nav">
+			<li><a class="current" href="#documenter_cover">Start</a></li>
+				
+			<li><a href="#installation" title="Installation">Installation</a></li>
+			<li><a href="#how_to_use_it" title="How to use it">How to use it</a></li>
+			<li><a href="#examples" title="Examples">Examples</a></li>
+			<li><a href="#options" title="Options">Options</a></li>
+			<li><a href="#configuration" title="Configuration">Configuration</a></li>
+			<li><a href="#css_javascript" title="CSS & JavaScript">CSS & JavaScript</a></li>
+			<li><a href="#php" title="PHP">PHP</a></li>
+			<li><a href="#sources_and_credits" title="Sources and Credits">Sources and Credits</a></li>
+
+		</ul>
+		<div id="documenter_copyright">Copyright HazzardWeb 2014<br>
+		made with the <a href="http://rxa.li/documenter">Documenter v2.0</a> 
+		</div>
+	</div>
+	<div id="documenter_content">
+	<section id="documenter_cover">
+	<h1>ImagePicker</h1>
+	<h2>Uploader -  Webcam - Cropper</h2>
+	<div id="documenter_buttons">
+		
+	</div>
+	<hr>
+	<ul>
+	<li>created: 01/29/2013</li>
+	<li>latest update: 01/29/2014</li>
+	<li>by: HazzardWeb</li>
+	<li><a href="http://codecanyon.net/user/HazzardWeb/">codecanyon.net/user/HazzardWeb/</a></li>
+	<li>email: <a href="mailto:&#104;&#97;&#122;&#122;&#97;&#114;&#100;&#119;&#101;&#98;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#104;&#97;&#122;&#122;&#97;&#114;&#100;&#119;&#101;&#98;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></li>
+	</ul>
+	<p>Thank you for purchasing my script. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="http://codecanyon.net/user/HazzardWeb">here</a>. Thanks so much!</p>
+	</section>
+	
+	<section id="installation">
+	<div class="page-header"><h3>Installation</h3><hr class="notop"></div>
+<p>
+	This script requires PHP to run.&nbsp;(optional: MySQL&nbsp;to save the images to database)&nbsp;</p>
+<p>
+	Extract from the downloaded archive the entire&nbsp;<strong>imgPicker</strong>&nbsp;folder or the contents of it you your server. Make sure the <strong>files/</strong> directory has 777 permission.</p>
+<p>
+	<strong>UserID</strong> &nbsp;- As default the script has the userID set to 1, to change this edit <strong>api.php</strong> and change the $userID variable to the userID of the logged user. You can use the session for that.</p>
+<p>
+	Optional: (save images to database): Import the <strong>imgpicker.sql,</strong>&nbsp;then edit <strong>includes/functions.php</strong> and look at the&nbsp;<strong>imgPickerDB()</strong> function. Change the database connection details there ( and customize it how you want).</p>
+<p>
+	Now you can run the script in your browser.</p>
+</section>
+<section id="how_to_use_it">
+	<div class="page-header"><h3>How to use it</h3><hr class="notop"></div>
+<p>
+	First you make sure you have included the css &amp; javascript files:</p>
+<pre class="prettyprint lang-html linenums">
+&lt;link rel=&quot;stylesheet&quot; href=&quot;assets/imgPicker.css&quot;&gt;
+&lt;script src=&quot;assets/js/jquery.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;assets/js/imgPicker.min.js&quot;&gt;&lt;/script&gt;
+</pre>
+<p>
+	If you have an image tag for the avatar (with the class of&nbsp;<em>avatar</em>) and a edit button (with the class of&nbsp;<em>edit</em>):</p>
+<pre class="prettyprint lang-brush: html linenums">
+&lt;img src=&quot;assets/img/default_avatar.jpg&quot; class=&quot;avatar&quot;/&gt;
+&lt;button class=&quot;edit&quot;&gt;Edit avatar&lt;/button&gt;</pre>
+<p>
+	To apply the plugin for that use it like this:</p>
+<pre class="prettyprint lang-brush: html linenums">
+&lt;script&gt;
+$(function() {
+    $(&#39;.edit&#39;).imgPicker({ // Apply the plugin to edit button
+      el: &#39;.avatar&#39;,  // Image selector
+      type: &#39;avatar&#39; // Image identificator
+    });
+});
+&lt;/script&gt;</pre>
+<p>
+	Now when you click the edit button the plugin will open a modal from where you can upload or take a photo with your webcam, then crop it and save it.</p>
+</section>
+<section id="examples">
+	<div class="page-header"><h3>Examples</h3><hr class="notop"></div>
+<p>
+	The script comes with few examples so you can pick one and start from there:</p>
+<p>
+	index.php - avatar, cover &amp; background.</p>
+<p>
+	example2.php - Avatar only&nbsp;</p>
+<p>
+	example3.php - Avatar only (inline display)</p>
+<p>
+	example4.php &nbsp;- Change background (auto upload)</p>
+<p>
+	example5.php - Integration with Bootstrap modal</p>
+</section>
+<section id="options">
+	<div class="page-header"><h3>Options</h3><hr class="notop"></div>
+<p>
+	This sections describes the options of the imgPicker plugin (client side).</p>
+<pre class="prettyprint lang-js linenums">
+$([button selector]).imgPicker({
+   [list of options]
+});</pre>
+<p>
+	[button selector] - The selector of an element, that when you click on it a modal box will open.</p>
+<p>
+	[list of options] - Options to inlcude to the plugin.&nbsp;</p>
+<h2>
+	Options:</h2>
+<ul>
+	<li>
+		<strong>el</strong>&nbsp;&nbsp;-&nbsp;A selector expression for your image or other element.&nbsp;</li>
+</ul>
+<ul>
+	<li>
+		<strong>type&nbsp;</strong>&nbsp;- Type of the image, like an identificator so you whe the image is sent to the server you know for what is that image (eg: &#39;avatar&#39;, &#39;cover&#39;). You&#39;ll also need to define this type in the config.php.&nbsp;<em>Default: none</em></li>
+</ul>
+<ul>
+	<li>
+		<strong>modalWidth&nbsp;</strong>- The width of the modal. <em class="item-default">Default: 400</em>.</li>
+</ul>
+<ul>
+	<li>
+		<strong>aspectRatio&nbsp;</strong>&nbsp;- As default if you don&#39;t set this the plugin will get the aspect ratio of your image. The aspect ratio is &nbsp;the width / height of your image. If you don&#39;t know what aspect ratio to use use the <strong>aspect_ratio.html</strong>. The format is &#39;width:height&#39; (eg: &#39;2:3&#39;, &#39;5:4&#39;).<em>&nbsp;Default: auto</em></li>
+</ul>
+<ul>
+	<li>
+		<strong>minWidth </strong>/ <strong>minHeight </strong>/ <strong>maxWidth </strong>/ <strong>maxHeight&nbsp;</strong>&nbsp;- As suggested these are for validation (only on the client side). <em class="item-default">Default: none</em></li>
+</ul>
+<ul>
+	<li>
+		<strong>upload&nbsp;</strong>&nbsp;- Enable or disable the upload.&nbsp;<em>Default: true</em></li>
+</ul>
+<ul>
+	<li>
+		<strong>webcam</strong> - Enable or disable the webcam. <em class="item-default">Default true</em></li>
+</ul>
+<ul>
+	<li>
+		<strong>obj_id&nbsp;</strong>- And id to identify for what is the image sent to server. <em class="item-default">Default: none</em></li>
+</ul>
+<ul>
+	<li>
+		<strong>data&nbsp;</strong>- Array of data you want to send to the server. <em class="item-default">Default: none</em></li>
+</ul>
+<ul>
+	<li>
+		<strong>title</strong> - Title of the modal. <em class="item-default">Default: &#39;Edit Image&#39;</em></li>
+</ul>
+<ul>
+	<li>
+		<strong>api</strong> &nbsp;- URL to the api.php file. <em class="item-default">Default: &#39;includes/api.php&#39;</em></li>
+</ul>
+<ul>
+	<li>
+		<strong>swf_url </strong>- URL to the webcam.swf file. Used for webcam for non-HTML5 browsers.&nbsp;<em class="item-default">Default: &#39;</em><em>assets/webcam.swf&#39;</em></li>
+</ul>
+<ul>
+	<li>
+		<b>attr</b>&nbsp;-&nbsp;Atribute that will be changed when the image is saved. <em class="item-default">Default: &#39;src&#39;</em></li>
+</ul>
+<ul>
+	<li>
+		<strong>inline</strong> - A container where you want to embed the plugin. <i>Default: none</i></li>
+</ul>
+<ul>
+	<li>
+		<strong>open&nbsp;</strong>- Can be &#39;<em>upload</em>&#39; or &#39;<em>webcam</em>&#39;. When you click on the button the plugin will automatically&nbsp;open the uploader or webcam.&nbsp;<em>Default: none</em></li>
+</ul>
+<ul>
+	<li>
+		<strong>modalTemplate</strong> - (a<em>dvanced) </em>- Custom html template for the modal display (See imgPicker.js &gt; var mainTemplate)</li>
+</ul>
+<ul>
+	<li>
+		<strong>inlineTemplate</strong> -&nbsp;(a<em>dvanced)&nbsp;</em>- Custom html template for the inline display (See imgPicker.js &gt; var mainTemplate)</li>
+</ul>
+<h2>
+	Callbacks:</h2>
+<ul>
+	<li>
+		<strong>complete: function(image) { &nbsp;}&nbsp;</strong>- After the image was uploaded and cropped this function will be called with the image parameter.</li>
+</ul>
+</section>
+<section id="configuration">
+	<div class="page-header"><h3>Configuration</h3><hr class="notop"></div>
+<p>
+	This sections describes the config settings from <strong>includes/config.php</strong>.</p>
+<ul>
+	<li>
+		<strong>upload_dir </strong>- The directory path where the images are saved (must have <strong>/</strong> at the end). <em>Default: &#39;../files/&#39;&nbsp;</em></li>
+</ul>
+<ul>
+	<li>
+		<strong>types&nbsp;</strong>- Array of image types (identificators) with options for each one. Because the script allows you to upload images for different things like user avatar, a cover of a user profile etc. &nbsp;You have to set some types (identificators). You only have to set the types array, the options foreach of these are optional.</li>
+</ul>
+<pre class="prettyprint lang-php linenums">
+&#39;types&#39; =&gt; array(
+    <span style="font-family: Arial, Verdana, sans-serif;">// Settings for an avatar</span>
+    &#39;avatar&#39; =&gt; array(
+   <span class="Apple-tab-span"> </span>    &#39;crop_width&#39;  =&gt; 150,  // Crop image to this width
+   <span class="Apple-tab-span"> </span>    &#39;crop_height&#39; =&gt; 150,  // Crop image to this height
+   <span class="Apple-tab-span"> </span>    &#39;force_crop&#39;  =&gt; true,
+   <span class="Apple-tab-span"> </span>    &#39;min_width&#39;   =&gt; 100,  // Minimum width required 
+   <span class="Apple-tab-span"> </span>    &#39;min_height&#39;  =&gt; 100,  // Minimum height required
+   <span class="Apple-tab-span"> </span>    // &#39;max_width&#39;   =&gt; null, // Maximum width allowed (null - not set)
+   <span class="Apple-tab-span"> </span>    // &#39;max_height&#39;  =&gt; null, // Maximum height allowed (null - not set)
+   <span class="Apple-tab-span"> </span>    &#39;original&#39; =&gt; false, // If you want to keep the full size image
+     ),
+
+     // Settings for a cover image
+     &#39;cover&#39; =&gt; array(
+  <span class="Apple-tab-span"> </span>     // Add settings here
+  <span class="Apple-tab-span"> </span>  ),
+),</pre>
+<ul>
+	<li>
+		<div>
+			<strong>max_file_size </strong>- The maximum size of the image allowed to be uploaded (in KiloBytes, 1 MB = 1000 KB). <em>Default: 10000 </em>(10MB)</div>
+	</li>
+</ul>
+<ul>
+	<li>
+		<div>
+			<strong>image_types&nbsp;</strong>- Allowed image extensions. <em>Default:&nbsp;jpg|png|jpeg|gif</em></div>
+	</li>
+</ul>
+<ul>
+	<li>
+		<strong>error_messages&nbsp;</strong>- Array of error messages</li>
+</ul>
+</section>
+<section id="css_javascript">
+	<div class="page-header"><h3>CSS & JavaScript</h3><hr class="notop"></div>
+<h4 id="css_javascript_css">CSS</h4>
+<p>
+	If you want to make changes to the css you just have to edit <strong>assets/imgPicker.css</strong>. The script does not require any other css frameworks.</p>
+<h4 id="css_javascript_javascript">JavaScript</h4>
+<p>
+	The javascript can be found in&nbsp;<strong>assets/imgPicker.js</strong>. As default the script uses&nbsp;<em>imgPicker.min.js</em>&nbsp;which is a compressed version. But for development you shoud use imgPicker.js.</p>
+<p>
+	The script follows the standard jQuery&nbsp;<a href="http://learn.jquery.com/plugins/" target="_blank">plugin&nbsp;</a>definition.&nbsp;</p>
+<p>
+	In imgPicker.js first are defined all functions then at the bottom is the initialization &amp; some events. Each function has a description &amp; comments so you can keep track how this script works. &nbsp;</p>
+</section>
+<section id="php">
+	<div class="page-header"><h3>PHP</h3><hr class="notop"></div>
+<p>
+	The only php files are:&nbsp;</p>
+<ul>
+	<li>
+		<strong>config.php</strong>&nbsp; - Script configuration file required by the api.php</li>
+	<li>
+		<strong>api.php</strong> - All ajax requests from the javascript are sent to this file.</li>
+	<li>
+		<strong>imgPicker.php&nbsp;</strong>- imgPicker Class</li>
+	<li>
+		<strong>functions.php</strong>&nbsp;- filename &amp; save to database functions</li>
+</ul>
+<h5>
+	<strong>Save images to database</strong></h5>
+<p>
+	To save the uploaded images to database, import the&nbsp;<strong>imgpicker.sql,</strong>&nbsp;then edit&nbsp;<strong>includes/functions.php</strong>&nbsp;and look at the&nbsp;<strong>imgPickerDB()</strong>&nbsp;function. Change the database connection details there ( and customize it how you want).</p>
+<p>
+	The&nbsp;<strong>imgPickerDB&nbsp;</strong>has 4 parameters that you can use to save the images:</p>
+<ul>
+	<li>
+		$image - the filename of the image</li>
+	<li>
+		$object_id - user id or whatever id you have set</li>
+	<li>
+		$type - type of the image (which is like an identificator, eg: avatar, cover...)</li>
+	<li>
+		$data - array of data that can be sent from the javascript (see <a href="#options">Options </a>settings)</li>
+</ul>
+<h5>
+	<strong>Access Control Allow Origin</strong></h5>
+<p>
+	If your website is using www (www.mywebsite.com) then you might want to add some headers in&nbsp;<strong>api.php</strong>. Edit includes/api.php and add:</p>
+<pre class="prettyprint lang-php linenums">
+header(&#39;Access-Control-Allow-Origin: mywebsite.com&#39;);
+header(&#39;Access-Control-Allow-Origin: www.mywebsite.com&#39;);</pre>
+</section>
+<section id="sources_and_credits">
+	<div class="page-header"><h3>Sources and Credits</h3><hr class="notop"></div>
+<p>
+	I&#39;ve used the following libraries:</p>
+<ul>
+	<li>
+		<a href="http://jquery.com/" target="_blank">jQuery</a></li>
+	<li>
+		<a href="https://code.google.com/p/jpegcam/" target="_blank">JPEGCam</a>&nbsp;by Joseph Huckaby&nbsp;(only the basic functions)</li>
+</ul>
+<hr>
+<p>
+	Once again, thank you so much for purchasing this script. As I said at the beginning, I&#39;d be glad to help you if you have any questions relating to this script. Also if you have any suggestions for new features that you want please let me know.</p>
+<p>
+	<b>Cretu Eusebiu,</b></p>
+<p>
+	<b>HazzardWeb</b></p>
+</section>
+
+	</div>
+</body>
+</html>

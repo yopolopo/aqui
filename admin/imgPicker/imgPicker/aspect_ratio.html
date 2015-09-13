@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Aspect Ratio Calculator</title>
+	<style>
+		body{margin:0;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;line-height:1.428571429;color:#333;background:#F3F3F3}#container{width:600px;min-height:300px;margin:2em auto;padding:1.5em;background:#fff;border:1px solid #D8D8D8;-webkit-box-shadow:0 1px 4px rgba(0,0,0,.065);-moz-box-shadow:0 1px 4px rgba(0,0,0,.065);box-shadow:0 1px 4px rgba(0,0,0,.065)}h2{margin:0}input{padding:4px 8px;border:1px #CCC solid}#panel{float:left;width:250px}#box{border:1px #CFCFCF solid;width:200px;height:200px;background:#F8F8F8;text-align:center;line-height:200px;font-weight:700;overflow:hidden}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<h2>Aspect Ratio Calculator</h2>
+		<div id="panel">
+			<p>
+				<b><label for="width">Width</label></b><br>
+				<input type="text" id="width" value="200" onkeyup="arc();">
+			</p>
+			<p>
+				<b><label for="height">Height</label></b><br>
+				<input type="text" id="height" value="200" onkeyup="arc();">
+			</p>
+		</div>
+		<div id="panel">
+			<p>Your aspect ratio is: <b id="ratio">1:1</b></p>
+			<div id="box">Example</div>
+		</div>
+	</div>
+	<script>
+		function arc(){var e=parseInt(document.getElementById("width").value),t=parseInt(document.getElementById("height").value);reduce(e,t);ratio2css(e,t)}function isInt(e){return/^[0-9]+$/.test(e)}function solve(e,t,n,r){var i;if("undefined"!==typeof e){i=Math.round(e/(n/r))}else if("undefined"!==typeof t){i=Math.round(t*(n/r))}return i}function reduce(e,t){var n,r,i;n=function(e,t){if(t===0)return e;return n(t,e%t)};if(!isInt(e)||!isInt(t))return"?:?";if(e===t)return"1:1";if(+e<+t){r=e;e=t;t=r}i=n(+e,+t);var s="undefined"===typeof r?e/i+":"+t/i:t/i+":"+e/i;document.getElementById("ratio").innerHTML=s}function ratio2css(e,t){var n,r;if(+e>+t){n=200;r=solve(n,undefined,e,t)}else{r=200;n=solve(undefined,r,e,t)}var i=document.getElementById("box");i.style.width=n+"px";i.style.height=r+"px";i.style.lineHeight=r+"px"}
+	</script>
+</body>
+</html>

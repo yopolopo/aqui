@@ -1,0 +1,95 @@
+/* Demo CSS */
+
+@import url(http://fonts.googleapis.com/css?family=PT+Sans);
+
+body {
+	margin: 0px;
+	/*font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;*/
+	font-family: 'PT Sans', sans-serif;
+	font-size: 14px;
+	color: #333;
+	background: #F3F3F3;
+}
+a {
+	color: #428bca;
+	text-decoration: none;
+}
+a:hover, a:focus {
+	color: #2a6496;
+	text-decoration: underline;
+}
+h2 {
+	margin-top: 0px;
+	font-weight: normal;
+}
+ul {
+	font-size: 16px;
+	margin: 0px;
+	padding-left: 25px;
+	list-style-type: square;
+}
+ul li {
+	margin-bottom: 2px;
+}
+#container {
+	max-width: 600px;
+	min-width: 420px;
+	min-height: 100px;
+	margin: 1.5em auto;
+	padding: 1em;
+	background: #fff;
+	border: 1px solid #D8D8D8;
+	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, .065);
+	-moz-box-shadow: 0 1px 4px rgba(0,0,0,.065);
+	box-shadow: 0 1px 4px rgba(0, 0, 0, .065);
+}
+.logo {
+	margin: 5px 0 0; 
+	color: #0976a5;
+	font-size: 32px;
+}
+.logo span {
+	color: #4e4646;
+}
+.info {
+	margin: 0 0 15px;
+	font-size: 15px;
+	font-weight: bold;
+}
+.getit {
+	text-align: center;
+}
+.getit a {
+	color: #ec5d59;
+}
+
+#avatar_container {
+	position: absolute;
+	margin: -107px 0 0 0px;
+}
+#cover_container {
+	margin-left: -15px;
+	margin-top: -15px;
+}
+.btn.edit-avatar {
+	position: relative;
+	margin: 0 0 25px -39px;
+	font-size: 12px;
+	padding: 2px 4px;
+	border-radius: 2px;
+}
+.btn.edit-cover {
+	float: right;
+	margin: -38px 0 0 0;
+	position: relative;
+	padding: 3px 8px;
+	font-size: 12px;
+	border-radius: 2px;
+}
+.btn.edit-bg {
+	float: right;
+	padding: 3px 6px;
+	font-size: 13px;
+	border-radius: 2px;
+	margin-right: -2px;
+}
