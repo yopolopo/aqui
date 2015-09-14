@@ -53,7 +53,6 @@ if($_GET['act']=='ins'){
 <html lang="en">
 <head>
 <?php include("header.php"); ?>
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true" type="text/javascript"></script>
 <script type="text/javascript">
 	function Chequeo(){
 		var error='';
