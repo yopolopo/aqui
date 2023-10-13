@@ -1,0 +1,61 @@
+const AWS = require('aws-sdk');
+const s3 = new AWS.S3();
+const dynamodb = new AWS.DynamoDB.DocumentClient();
+
+function removeSpecialCharacters(str) {
+    return str.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '');
+}
+
+exports.handler = async (event, context) => {
+    try {
+        // Fetch the CSV file from S3
+        const params = {
+            Bucket: "testingppl",
+            Key: event.Parameters.fileName,
+        };
+        const data = await s3.getObject(params).promise();
+        const csvData = data.Body.toString('utf-8');
+        const lines = csvData.split('\n');
+        const headers = lines[0].split(',');
+
+        // Parse and insert CSV data into DynamoDB
+        for (let i = 1; i < lines.length; i++) {
+            const values = lines[i].split(',');
+
+            if (values.length === headers.length) {
+                const item = {};
+
+                for (let j = 0; j < headers.length; j++) {
+                    const header = headers[j].replace(/"/g, ''); // Remove double quotes
+                    const rawValue = values[j] ? values[j].replace(/"/g, '') : ''; // Remove double quotes
+                    const value = removeSpecialCharacters(rawValue);
+                    item[header] = value || null;
+                }
+
+                // Insert the item into DynamoDB
+                const params = {
+                    TableName: "Data",
+                    Item: item,
+                };
+
+                await dynamodb.put(params).promise();
+                console.log(`Inserted item ${i}`);
+            }
+            else {
+                console.error(`Skipped invalid row: ${lines[i]}`);
+            }
+        }
+
+        return {
+            statusCode: 200,
+            body: 'CSV data imported into DynamoDB successfully.',
+        };
+    }
+    catch (error) {
+        console.error(`Error: ${error.message}`);
+        return {
+            statusCode: 500,
+            body: `Error: ${error.message}`,
+        };
+    }
+};
